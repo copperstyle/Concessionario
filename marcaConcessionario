@@ -1,0 +1,105 @@
+package marcaconcessionarios;
+import java.util.Scanner;
+
+public class MarcaConcessionarios {
+
+    public static void main(String[] args) {
+        int escolha, escolha2, escolha3, escolha4, pos;
+       
+        Scanner leituraConcessionario= new Scanner(System.in);
+        Scanner leitura = new Scanner(System.in);
+        Concessionario p1 = new Concessionario();
+        Clientes novoCliente= new Clientes();
+ 
+        do{
+            menuInicial();
+            escolha = leitura.nextInt(); 
+            switch(escolha){
+            case 1:
+                menuSecundario();
+                escolha2 = leitura.nextInt(); 
+                switch(escolha2)
+                {
+                    case 1:
+                        menuConcessionario();
+                        escolha3 = leitura.nextInt();
+                        switch(escolha3)
+                        {
+                            case 1:
+                                menuConcessionario();
+                                escolha4 = leitura.nextInt();
+                                switch(escolha4)
+                                {
+                                    case 1:
+                                        System.out.println("op 1");
+                                        break;
+                                    case 2:
+                                        System.out.println("op 2");  
+                                    break;
+                                    default:
+                                    System.out.println("Opção inválida.");
+                                }
+                            case 2:
+                                menuCliente();   
+                                escolha4 = leitura.nextInt();
+                                switch(escolha4)
+                                {
+                                    case 1:
+                                        System.out.println("op 1");
+                                        break;
+                                    case 2:
+                                        System.out.println("op 2");  
+                                    break;
+                                    default:
+                                    System.out.println("Opção inválida.");
+                                }
+                            break;
+                            default:
+                            System.out.println("Opção inválida.");
+                        }
+                    case 2:
+                        menuCliente();     
+                    break;
+                    default:
+                    System.out.println("Opção inválida.");
+                }
+            case 2:
+                menuSecundario();     
+                break;
+            default:
+                System.out.println("Opção inválida.");
+            }
+        } while(escolha != 0);
+    }
+    
+     public static void menuInicial(){
+        System.out.println("\tSelecione um dos diferentes concessionários");
+        System.out.println("1. Porto");
+        System.out.println("2. Lisboa");
+        System.out.print("Opcao: ");
+    }
+    
+      public static void menuSecundario(){
+        System.out.println("\tSelecione uma das seguintes opções");
+        System.out.println("1. Área do Concessionário");
+        System.out.println("2. Área de Cliente");
+        System.out.print("Opcao: ");
+    }
+     
+      public static void menuCliente(){
+        System.out.println("\tSelecione uma das seguintes opções");
+        System.out.println("1. Registar dados de cliente");
+        System.out.println("2. Ver dados de cliente");
+        System.out.println("3. Eliminar cliente");
+        System.out.print("Opcao: ");
+    }
+      
+        public static void menuConcessionario(){
+        System.out.println("\tSelecione uma das seguintes opções");
+        System.out.println("1. Registar carro");
+        System.out.println("2. Ver carros disponíveis");
+        System.out.println("3. Preparar testdrive");
+        System.out.println("4. Consultar dados de testdrives");
+        System.out.print("Opcao: ");
+    }
+}
